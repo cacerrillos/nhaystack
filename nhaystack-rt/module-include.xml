@@ -1,0 +1,97 @@
+<!--
+  Copyright (c) 2012, J2 Innovations
+  Licensed under the Academic Free License version 3.0
+ 
+  History:
+    07 Nov 2011  Richard McElhinney  Creation
+    28 Sep 2012  Mike Jarmy          Ported from axhaystack
+-->
+
+<types>
+
+    <!-- nhaystack -->
+    <type name="HDict"        class="nhaystack.BHDict"/>
+    <type name="HFloor"       class="nhaystack.BHFloor"/>
+    <type name="HGrid"        class="nhaystack.BHGrid"/>
+    <type name="HNum"         class="nhaystack.BHNum"/>
+    <type name="HRef"         class="nhaystack.BHRef"/>
+    <type name="HTimeZone"    class="nhaystack.BHTimeZone"/>
+    <type name="HUnit"        class="nhaystack.BHUnit"/>
+
+    <!-- nhaystack.driver -->
+    <type name="HTags"                  class="nhaystack.driver.BHTags"/>
+    <type name="NHaystackNetwork"       class="nhaystack.driver.BNHaystackNetwork"/>
+    <type name="NHaystackPollScheduler" class="nhaystack.driver.BNHaystackPollScheduler"/>
+    <type name="NHaystackServer"        class="nhaystack.driver.BNHaystackServer"/>
+    <type name="NHaystackServerFolder"  class="nhaystack.driver.BNHaystackServerFolder"/>
+    <type name="StructureSettings"      class="nhaystack.driver.BStructureSettings"/>
+    <type name="PointGrouping"          class="nhaystack.driver.BPointGrouping"/>
+
+    <!-- nhaystack.driver.alarm -->
+    <type name="NHaystackAlarmRecipient"  class="nhaystack.driver.alarm.BNHaystackAlarmRecipient"  />
+
+    <!-- nhaystack.driver.history -->
+    <type name="NHaystackHistoryDeviceExt"  class="nhaystack.driver.history.BNHaystackHistoryDeviceExt"  />
+    <type name="NHaystackHistoryImport"     class="nhaystack.driver.history.BNHaystackHistoryImport"     />
+
+    <!-- nhaystack.driver.history.learn -->
+    <type name="NHaystackLearnHistoriesJob" class="nhaystack.driver.history.learn.BNHaystackLearnHistoriesJob" />
+    <type name="NHaystackHistoryEntry"      class="nhaystack.driver.history.learn.BNHaystackHistoryEntry"      />
+    <type name="NHaystackHistoryImportManager" class="nhaystack.driver.history.learn.BNHaystackHistoryImportManager" >
+      <agent>
+        <on type="nhaystack:NHaystackHistoryDeviceExt"/>
+      </agent>
+    </type>
+
+    <!-- nhaystack.driver.point -->
+    <type name="NHaystackBoolPoint"      class="nhaystack.driver.point.BNHaystackBoolPoint"      />
+    <type name="NHaystackBoolProxyExt"   class="nhaystack.driver.point.BNHaystackBoolProxyExt"   />
+    <type name="NHaystackBoolWritable"   class="nhaystack.driver.point.BNHaystackBoolWritable"   />
+    <type name="NHaystackNumberPoint"    class="nhaystack.driver.point.BNHaystackNumberPoint"    />
+    <type name="NHaystackNumberProxyExt" class="nhaystack.driver.point.BNHaystackNumberProxyExt" />
+    <type name="NHaystackNumberWritable" class="nhaystack.driver.point.BNHaystackNumberWritable" />
+    <type name="NHaystackPointDeviceExt" class="nhaystack.driver.point.BNHaystackPointDeviceExt" />
+    <type name="NHaystackPointFolder"    class="nhaystack.driver.point.BNHaystackPointFolder"    />
+    <type name="NHaystackProxyExt"       class="nhaystack.driver.point.BNHaystackProxyExt"       />
+    <type name="NHaystackStrPoint"       class="nhaystack.driver.point.BNHaystackStrPoint"       />
+    <type name="NHaystackStrProxyExt"    class="nhaystack.driver.point.BNHaystackStrProxyExt"    />
+    <type name="NHaystackStrWritable"    class="nhaystack.driver.point.BNHaystackStrWritable"    />
+
+    <!-- nhaystack.driver.point.learn -->
+    <type name="NHaystackLearnPointsJob" class="nhaystack.driver.point.learn.BNHaystackLearnPointsJob" />
+    <type name="NHaystackPointEntry" class="nhaystack.driver.point.learn.BNHaystackPointEntry" />
+    <type name="NHaystackPointManager" class="nhaystack.driver.point.learn.BNHaystackPointManager" >
+        <agent>
+            <on type="nhaystack:NHaystackPointDeviceExt"/>
+            <on type="nhaystack:NHaystackPointFolder"/>
+        </agent>
+    </type>
+    <type name="NHaystackLearnStructureJob"  class="nhaystack.driver.point.learn.BNHaystackLearnStructureJob"  />
+
+    <type name="HTagsDialog" class="nhaystack.driver.ui.BHTagsDialog" />
+    <type name="HTagsFE" class="nhaystack.driver.ui.BHTagsFE"> <agent><on type="nhaystack:HTags"/> </agent></type>
+
+    <!-- nhaystack.server -->
+    <type name="HScheduleEvent"               class="nhaystack.server.BHScheduleEvent"/>
+    <type name="NHaystackRebuildCacheJob"     class="nhaystack.server.BNHaystackRebuildCacheJob"/>
+    <type name="NHaystackRemoveBrokenRefsJob" class="nhaystack.server.BNHaystackRemoveBrokenRefsJob"/>
+    <type name="NHaystackService"             class="nhaystack.server.BNHaystackService"/>
+    <type name="NHaystackServlet"             class="nhaystack.server.BNHaystackServlet"/>
+    <type name="NHaystackStats"               class="nhaystack.server.BNHaystackStats"/>
+    <type name="TimeZoneAlias"                class="nhaystack.server.BTimeZoneAlias"/>
+    <type name="TimeZoneAliasFolder"          class="nhaystack.server.BTimeZoneAliasFolder"/>
+    <type name="UniqueEquipTypeArgs"          class="nhaystack.server.BUniqueEquipTypeArgs"/>
+    <type name="UniqueEquipTypeJob"           class="nhaystack.server.BUniqueEquipTypeJob"/>
+
+    <!-- nhaystack.site -->
+    <type name="HEquip"  class="nhaystack.site.BHEquip"/>
+    <type name="HSite"   class="nhaystack.site.BHSite"/>
+    <type name="HTagged" class="nhaystack.site.BHTagged"/>
+
+    <!-- nhaystack.worker -->
+    <type name="INHaystackWorker"          class="nhaystack.worker.BINHaystackWorker"/>
+    <type name="INHaystackWorkerParent"    class="nhaystack.worker.BINHaystackWorkerParent"/>
+    <type name="NHaystackThreadPoolWorker" class="nhaystack.worker.BNHaystackThreadPoolWorker"/>
+    <type name="NHaystackWorker"           class="nhaystack.worker.BNHaystackWorker"/>
+
+</types>
